@@ -16,4 +16,4 @@ Ein klassisches Tic-Tac-Toe-Spiel im Terminal, bei dem zwei Spieler gegeneinande
 ---
 
 ```bash
-python tic_tac_toe.py
+python main-Game.py
