@@ -1,17 +1,17 @@
-# 🎮 Tic-Tac-Toe (X und O)
+# 🎮 Tic-Tac-Toe (X and O)
 
-Ein klassisches Tic-Tac-Toe-Spiel im Terminal, bei dem zwei Spieler gegeneinander antreten. Das Spiel ist in Python geschrieben und bietet ein Menüsystem zum Starten, Neustarten und Beenden des Spiels.
+A classic Tic-Tac-Toe game in the terminal where two players compete against each other. The game is written in Python and features a menu system for starting, restarting, and quitting the game.
 
 ---
 
 ## ✅ Features
 
-- Zwei-Spieler-Modus
-- Benutzerdefinierte Namenseingabe
-- Symbolwahl (X oder O)
-- Anzeige des Spielbretts
-- Überprüfung auf Sieg oder Unentschieden
-- Menüsystem (Starten / Neustarten / Beenden)
+- Two-player mode
+- Custom name input
+- Symbol choice (X or O)
+- Display of the game board
+- Check for win or draw
+- Menu system (Start / Restart / Quit)
 
 ---
 
