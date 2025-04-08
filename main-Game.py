@@ -15,8 +15,8 @@ class Player:
         
     def choose_sympol(self):
         while True:
-            sympol = input(f'{self.name}, Enter your sympol right here (X or O): ')
-            if sympol == 'X' or sympol == 'O':
+            sympol = f' {input(f'{self.name}, Enter your sympol right here (X or O): ').upper().strip()} '
+            if sympol == ' X ' or sympol == ' O ':
                 self.sympol = sympol
                 break
             else:
@@ -47,11 +47,11 @@ class Menu:
 
 class Board:
     def __init__(self):
-        self.board=[['1','|','2','|','3'],
-                    ['-','-','-','-','-'],
-                    ['4','|','5','|','6'],
-                    ['-','-','-','-','-'],
-                    ['7','|','8','|','9']]
+        self.board=[[' 1 ',' | ',' 2 ',' | ',' 3 '],
+                    [' - ',' - ',' - ',' - ',' - '],
+                    [' 4 ',' | ',' 5 ',' | ',' 6 '],
+                    [' - ',' - ',' - ',' - ',' - '],
+                    [' 7 ',' | ',' 8 ',' | ',' 9 ']]
         
     
     def display_board(self):
@@ -69,7 +69,7 @@ class Board:
         }
 
         row, col = position_mapping[number]
-        if self.board[row][col] not in ('X', 'O'):  # Check if the cell is empty
+        if self.board[row][col] not in (' X ', ' O '):  # Check if the cell is empty
             self.board[row][col] = symbol
             return True
         else:
@@ -77,11 +77,11 @@ class Board:
             return False
     
     def reset_board(self):
-        self.board=[['1','|','2','|','3'],
-                    ['-','-','-','-','-'],
-                    ['4','|','5','|','6'],
-                    ['-','-','-','-','-'],
-                    ['7','|','8','|','9']]
+        self.board=[[' 1 ',' | ',' 2 ',' | ',' 3 '],
+                    [' - ',' - ',' - ',' - ',' - '],
+                    [' 4 ',' | ',' 5 ',' | ',' 6 '],
+                    [' - ',' - ',' - ',' - ',' - '],
+                    [' 7 ',' | ',' 8 ',' | ',' 9 ']]
 
 class Game:
     def __init__(self):
@@ -101,10 +101,10 @@ class Game:
                     self.player1.choose_name('player1,')
                     self.player2.choose_name('player2,')
                     self.player1.choose_sympol()
-                    if self.player1.sympol == 'X':
-                        self.player2.sympol = 'O'
+                    if self.player1.sympol == ' X ':
+                        self.player2.sympol = ' O '
                     else:
-                        self.player2.sympol = 'X'
+                        self.player2.sympol = ' X '
                     self.players.append(self.player1)
                     self.players.append(self.player2)
                     
@@ -147,7 +147,7 @@ class Game:
             self.board.board[2][0], self.board.board[2][2], self.board.board[2][4],
             self.board.board[4][0], self.board.board[4][2], self.board.board[4][4]]
         
-        if all(i in ('X', 'O') for i in flat_board):
+        if all(i in (' X ', ' O ') for i in flat_board):
             if not self.check_win():
                 print('it\'s a draw')
                 return True
@@ -178,7 +178,7 @@ class Game:
 
         # Check for a win
         for combo in winning_combinations:
-            if flat_board[combo[0]] == flat_board[combo[1]] == flat_board[combo[2]] and flat_board[combo[0]] in ('X', 'O'):
+            if flat_board[combo[0]] == flat_board[combo[1]] == flat_board[combo[2]] and flat_board[combo[0]] in (' X ', ' O '):
                 print(f"{self.player.name} '{flat_board[combo[0]]}' wins!")
                 return True
         return False
